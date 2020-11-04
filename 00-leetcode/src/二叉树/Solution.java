@@ -1,0 +1,17 @@
+package ¶þ²æÊ÷;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+class Solution {
+    public TreeNode invertTree(TreeNode root) {
+        if(root==null) return root;
+        TreeNode temp=null;
+        temp=root.left;
+        root.left=root.right;
+        root.right=temp;
+        invertTree(root.left);
+        invertTree(root.right);
+        return root;
+    }
+}
